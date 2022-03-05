@@ -10,7 +10,7 @@ require "readline"
     if memo_type === "1"
         
         puts "拡張子を除いたファイル名を入力してください"
-        memo_name = gets.chomp
+        memo_name = gets.to_s.chomp
         puts "メモしたい内容を記入してください\nCtrl + Dで終了してください"
         memo_contents = readlines(chomp: true)
         memo = CSV.open(memo_name + ".csv","w")
@@ -22,7 +22,7 @@ require "readline"
           puts d
         end
         puts "編集するファイル名を拡張子を除いて入力してください"
-        memo_name = gets.chomp
+        memo_name = gets.to_s.chomp
         memo = CSV.read(memo_name + ".csv")
         puts "メモの内容は\n#{memo}です\n1(追加する) 2(削除する) 3(編集せずに終了する)"
         
